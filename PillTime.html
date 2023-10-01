@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PillTime</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"
+    defer></script>
+
+  <link rel="shortcut icon" href="./img/Logo_PillTime.png" type="image/x-icon">
+  <style>
+    body {
+      background-image: linear-gradient(to bottom, white, white)
+    }
+
+
+    .colorhover:hover {
+      background-color: #3E78B2;
+      color: white !important;
+      border-radius: 75px;
+    }
+
+    .nav-item {
+      margin-left: 40px;
+    }
+
+    .TituloPagina {
+      text-align: center;
+      color: #3E78B2;
+    }
+
+    .nav-link {
+      color: #3E78B2 !important;
+      font-weight: bold;
+    }
+
+    .PiltimeNav {
+      color: #3E78B2;
+      margin-left: 20px;
+    }
+
+    .carousel-inner img {
+      max-width: 100%;
+      /* Ajuste a largura máxima das imagens para que se ajustem ao carousel */
+      max-height: 650px;
+      /* Ajuste a altura máxima das imagens, se necessário */
+      display: block;
+      /* Certifique-se de que as imagens estejam centralizadas horizontalmente */
+      margin: 0 auto;
+      /* Centralize as imagens horizontalmente no carousel */
+      margin-top: 30px;
+      align-self: auto;
+      border-radius: 5%;
+    }
+
+    .ImagemInicio {
+      padding: 5px;
+    }
+
+    .H2 {
+      font-weight: bold;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    }
+
+    .lead {
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    }
+
+    .H2White {
+      color: white;
+      font-weight: bold;
+    }
+
+    .card-group {
+      margin-top: 30px;
+      margin-left: 40px;
+      margin-right: 40px;
+      margin-bottom: 30px;
+    }
+
+    .small-card-img {
+      max-width: 25%;
+      height: auto;
+    }
+
+    .blue-rectangle {
+    background-color: #3E78B2;
+    border: 2px solid #3E78B2; /* Cor da borda azul */
+    padding: 10px; /* Espaçamento interno ao redor do retângulo */
+    border-radius: 10px; /* Borda arredondada para o retângulo */
+    margin-left: 30px;
+    margin-right: 30px;
+    ;
+  }
+
+  .card-valores img {
+    margin-top: 20px; /* Ajuste a quantidade de margem conforme necessário */
+  }
+
+  .footer {
+            background-color: white;
+            color: #3E78B2; 
+            padding: 20px; 
+            text-align: center; 
+        }
+    
+    .Cards-Alunos{
+      padding-top: 50px;
+      padding-bottom: 50px;
+      text-align: center;
+    }
+
+    .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  gap: 15px;
+  background-color: #181717;
+  outline: 3px #181717 solid;
+  outline-offset: -3px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.button .text {
+  color: white;
+  font-weight: 700;
+  font-size: 1em;
+  transition: 400ms;
+}
+
+.button svg path {
+  transition: 400ms;
+}
+
+.button:hover {
+  background-color: transparent;
+}
+
+.button:hover .text {
+  color: #181717;
+}
+
+.button:hover svg path {
+  fill: #181717;
+}
+.lastfooter{
+  text-align: center;
+  font-size: x-small;
+}
+
+.fixed-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%; /* Para ocupar a largura total da página */
+  z-index: 1000; /* Define a ordem de empilhamento (pode ajustar conforme necessário) */
+}
+
+  /* Estilo para a seção "Sobre Nós" */
+  #sobre-nos {
+    background-color: #3E78B2; /* Cor de fundo azul */
+    padding: 20px; /* Espaçamento interno */
+    color: white; /* Cor do texto */
+    margin-bottom: 30px;
+    border-radius: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  /* Estilo para o título da seção */
+  .section-title {
+    font-size: 24px; /* Tamanho da fonte do título */
+    margin-bottom: 20px; /* Espaçamento inferior do título */
+  }
+  
+  .footer-content {
+  display: flex;
+  align-items: center; /* Isso centraliza verticalmente a imagem e o texto */
+}
+
+.footer-content img {
+  margin-right: 10px; /* Adicione margem à direita da imagem para espaçamento */
+}
+
+
+
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-expand-lg bg-body-tertiary fixed-navbar">
+    <div class="container-fluid">
+
+      <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="./Icons/PillTime.ico" alt="Logo" width="60" height="60" class="d-inline-block align-text-top">
+          </a>
+          <h1 class="PiltimeNav">PillTime</h1>
+        </div>
+      </nav>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <li class="nav-item">
+            <a class="nav-link active colorhover" aria-current="page" href="#">Início</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link colorhover" aria-disabled="true" href="#footer">Contato</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link colorhover" aria-disabled="true" href="#sobre-nos">Sobre Nós</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle colorhover" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Sobre a Ideia
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Visão</a></li>
+              <li><a class="dropdown-item" href="#">Valores</a></li>
+              <li><a class="dropdown-item" href="#">Objetivos</a></li>
+              <li>
+
+              </li>
+            </ul>
+          </li>
+
+
+
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <section class="hero-section py-5 bg-image" id="hero-section"
+    style="background-image: url('./Imagens/Idoso\ e\ neta.webp'); background-size: 100% 850px;">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-3">
+          <h1 class="H2">A Aplicação PillTime.</h1>
+          <p class="lead">Voltada para o auxílio do consumo de medicação de idosos que tendem a esquecer o horário da
+            medicação, nossa ideia surge para suprir essa demanda, e auxiliar responsáveis a tomarem cuidado de seus
+            parentes e entes queridos que precisam tomar medicação controlada e que muitas das vezes podem esquecer do
+            horário das mesmas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="CarouselECard">
+
+    <section>
+      <div class="d-flex justify-content-center align-items-center">
+        <div id="carouselExampleRide" class="carousel slide col-8" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="./Imagens/Mulher e idosa.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="./Imagens/Idoso3.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="./Imagens/Idoso4.jpg" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="container text-center mt-4">
+        <h2 class="TituloPagina">Como funciona a Aplicação?</h2>
+        <p>Basicamente a aplicação consiste em dois tipos de usuário sendo eles o responsável e o cuidador, O responsável será quem irá cadastrar o usuário do Idoso, A medicação e também os horários, ou seja, o Usuário do tipo responsável será a "Chave-Mestra da aplicação.</p>
+        <p>O usuário Idoso terá apenas a função de aceitar ou recusar o alarme, indicando o mesmo se ingeriu ou não a medicação, caso o Idoso recuse, o usuário responsável irá receber um email alertando sobre a situação</p>
+        <p>A apicação terá o intuito de ser o mais intuitiva para o usuário facilitando sua utilização e cumprindo sua proposta</p>
+      </div>
+
+    </section>
+
+    
+    <section>
+      <div class="blue-rectangle">
+        <div class="card-group">
+          <div class="card">
+            <div class="text-center">
+              <img src="Imagens/Visao.png" class="card-img-top small-card-img" alt="...">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Visão</h5>
+              <p class="card-text">Nossa Visão como aplicação é sempre buscar agradar ao cliente e ter essa inclusão social.</p>
+            </div>
+          </div>
+          <div class="card card-valores">
+            <div class="text-center">
+              <img src="./Imagens/Valores.png" class="card-img-top small-card-img" alt="...">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Valores</h5>
+              <p class="card-text">Nossos valores estão voltados a sociedade onde buscamos sempre priorizar o cliente e suas necessidades. Atingindo assim suas expectativas.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="text-center"> 
+              <img src="./Imagens/Objetivo.png" class="card-img-top small-card-img" alt="...">
+            </div>
+            <div class="card-body">
+              <div class="bg-tittle">
+              <h5 class="card-title">Objetivos</h5>
+            </div>
+              <p class="card-text">Ser o mais inclusivo possível, fazer com que nossos clientes acreditem e usem nossa aplicação com o máximo de satisfação e correspondência de expectativas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="Cards-Alunos">
+      <div class="d-flex justify-content-center mb-4"> <!-- Centraliza horizontalmente e adiciona margem inferior -->
+        <div class="card" style="width: 18rem; margin-right: 125px;"> <!-- Adicione margem à direita -->
+          <img src="./Imagens/Vithor.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Vithor Plucinski</h5>
+            <p class="card-text">Acadêmico da Universidade UNIPAR de ADS</p>
+            <a href="https://github.com/vithorhugo1" class="button">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 0.296997C5.37 0.296997 0 5.67 0 12.297C0 17.6 3.438 22.097 8.205 23.682C8.805 23.795 9.025 23.424 9.025 23.105C9.025 22.82 9.015 22.065 9.01 21.065C5.672 21.789 4.968 19.455 4.968 19.455C4.422 18.07 3.633 17.7 3.633 17.7C2.546 16.956 3.717 16.971 3.717 16.971C4.922 17.055 5.555 18.207 5.555 18.207C6.625 20.042 8.364 19.512 9.05 19.205C9.158 18.429 9.467 17.9 9.81 17.6C7.145 17.3 4.344 16.268 4.344 11.67C4.344 10.36 4.809 9.29 5.579 8.45C5.444 8.147 5.039 6.927 5.684 5.274C5.684 5.274 6.689 4.952 8.984 6.504C9.944 6.237 10.964 6.105 11.984 6.099C13.004 6.105 14.024 6.237 14.984 6.504C17.264 4.952 18.269 5.274 18.269 5.274C18.914 6.927 18.509 8.147 18.389 8.45C19.154 9.29 19.619 10.36 19.619 11.67C19.619 16.28 16.814 17.295 14.144 17.59C14.564 17.95 14.954 18.686 14.954 19.81C14.954 21.416 14.939 22.706 14.939 23.096C14.939 23.411 15.149 23.786 15.764 23.666C20.565 22.092 24 17.592 24 12.297C24 5.67 18.627 0.296997 12 0.296997Z" fill="white"></path>
+              </svg>
+              <p class="text">GitHub</p>
+            </a>
+          </div>
+        </div>
+    
+        <div class="card" style="width: 18rem;"> <!-- Adicione margem à esquerda -->
+          <img src="./Imagens/JAPA.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Everton Cabral</h5>
+            <p class="card-text">Acadêmico da Universidade UNIPAR de ADS</p>
+            <a href="https://github.com/EvertoonCabral" class="button">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 0.296997C5.37 0.296997 0 5.67 0 12.297C0 17.6 3.438 22.097 8.205 23.682C8.805 23.795 9.025 23.424 9.025 23.105C9.025 22.82 9.015 22.065 9.01 21.065C5.672 21.789 4.968 19.455 4.968 19.455C4.422 18.07 3.633 17.7 3.633 17.7C2.546 16.956 3.717 16.971 3.717 16.971C4.922 17.055 5.555 18.207 5.555 18.207C6.625 20.042 8.364 19.512 9.05 19.205C9.158 18.429 9.467 17.9 9.81 17.6C7.145 17.3 4.344 16.268 4.344 11.67C4.344 10.36 4.809 9.29 5.579 8.45C5.444 8.147 5.039 6.927 5.684 5.274C5.684 5.274 6.689 4.952 8.984 6.504C9.944 6.237 10.964 6.105 11.984 6.099C13.004 6.105 14.024 6.237 14.984 6.504C17.264 4.952 18.269 5.274 18.269 5.274C18.914 6.927 18.509 8.147 18.389 8.45C19.154 9.29 19.619 10.36 19.619 11.67C19.619 16.28 16.814 17.295 14.144 17.59C14.564 17.95 14.954 18.686 14.954 19.81C14.954 21.416 14.939 22.706 14.939 23.096C14.939 23.411 15.149 23.786 15.764 23.666C20.565 22.092 24 17.592 24 12.297C24 5.67 18.627 0.296997 12 0.296997Z" fill="white"></path>
+              </svg>
+              <p class="text">GitHub</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre-nos">
+      <div class="container">
+        <h2 class="section-title">Sobre Nós</h2>
+        <p>
+          Somos Dois acadêmicos de Análise e Desenvolvimento de Sistema na Universidade UNIPAR, esta aplicação é referente a nossa Matéria de Projeto Integrador, mas é uma ideia que surge com o intuito de solucionarmos um problema muito comum que seria da ingestão de medicamentos.
+        </p>
+        <p>
+          Começamos Essa ideia no início do ano de 2023, e a mesma estará disponível em breve para a utilização de diversos usuários e temos a expectativa de ajudar diversas pessoas com essa ideia, isso incluindo nossos próprios familiares.
+        </p>
+      </div>
+    </section>
+
+    
+    <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-content">
+        <img src="./Icons/PillTime.ico" alt="">
+        <h2>Formas de Contato:</h2>
+        <a href="mailto:Vithor.Plucinski@Edu.unipar.br" style="padding: 5px;">E-mail</a>
+        <p>Telefone: 45 999957967 ou 45 9992-5801</p>
+        <p style="font-weight: bold;">Endereço: Av. Parigot de Souza, 3636 - Jardim Prada, Toledo - PR, 85903-170</p>
+      </div>
+    </div>
+  </footer>
+    
+
+  <footer class="lastfooter">
+    <div class="container">
+        <p>@ 2023 SkillMap - Todos os Direitos Reservados aos Alunos da Página e a Unipar</p>
+    </div>
+</footer>
+
+    <br>
+
+
+
+
+    </div>
+
+
+
+</body>
+
+</html>
